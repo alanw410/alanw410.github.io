@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Laputa</title>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+	<script src='data.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+	<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+	<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+	<script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+	<script type="text/javascript">
+			AmCharts.makeChart("chartdiv5",
+				{
+					"type": "serial",
+					"categoryField": "category",
+					"angle": 10,
+					"depth3D": 6,
+					"startDuration": 1,
+					"theme": "dark",
+					"categoryAxis": {
+						"gridPosition": "start",
+						"dashLength": 1,
+						"gridThickness": 0
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"fillAlphas": 1,
+							"id": "AmGraph-1",
+							"title": "2011",
+							"type": "column",
+							"valueField": "column-1"
+						},
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"fillAlphas": 1,
+							"id": "AmGraph-2",
+							"title": "2016",
+							"type": "column",
+							"valueField": "column-2"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"axisThickness": 0,
+							"gridThickness": 0,
+							"labelsEnabled": false,
+							"title": "",
+							"titleFontSize": 7,
+							"titleRotation": -2
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"legend": {
+						"enabled": true,
+						"align": "center",
+						"useGraphSettings": true
+					},
+					"titles": [],
+					"dataProvider": [
+						{
+							"category": "15-19",
+							"column-1": "1406",
+							"column-2": "1547"
+						},
+						{
+							"category": "20-24",
+							"column-1": "30843",
+							"column-2": "27959"
+						},
+						{
+							"category": "25-34",
+							"column-1": "396594",
+							"column-2": "435827"
+						},
+						{
+							"category": "35-44",
+							"column-1": "605936",
+							"column-2": "629760"
+						},
+						{
+							"category": "45-54",
+							"column-1": "608032",
+							"column-2": "608241"
+						},
+						{
+							"category": "55-64",
+							"column-1": "538296",
+							"column-2": "564523"
+						},
+						{
+							"category": "65-74",
+							"column-1": "355861",
+							"column-2": "435742"
+						},
+						{
+							"category": "75-84",
+							"column-1": "179124",
+							"column-2": "206472"
+						},
+						{
+							"category": "85ov",
+							"column-1": "39560",
+							"column-2": "51294"
+						}
+					]
+				}
+			);
+		</script>
+
+	<script type="text/javascript">
+			AmCharts.makeChart("chartdiv4",
+				{
+					"type": "pie",
+					"angle": 4.5,
+					"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+					"depth3D": 15,
+					"colors": [
+						"#aab9f7",
+						"#ae85c9"
+					],
+					"hoverAlpha": 0.53,
+					"titleField": "category",
+					"valueField": "column-1",
+					"theme": "dark",
+					"allLabels": [],
+					"balloon": {
+						"animationDuration": 0
+					},
+					"titles": [],
+					"dataProvider": [
+						{
+							"category": "Male",
+							"column-1": "356551"
+						},
+						{
+							"category": "Female",
+							"column-1": "409432"
+						},
+						{
+							"category": "",
+							"column-1": ""
+						}
+					]
+				}
+			);
+		</script>
+
+	<script type="text/javascript">
+			AmCharts.makeChart("chartdiv3",
+				{
+					"type": "pie",
+					"angle": 4.5,
+					"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+					"depth3D": 15,
+					"colors": [
+						"#aab9f7",
+						"#ae85c9"
+					],
+					"hoverAlpha": 0.53,
+					"titleField": "category",
+					"valueField": "column-1",
+					"theme": "dark",
+					"allLabels": [],
+					"balloon": {
+						"animationDuration": 0
+					},
+					"titles": [],
+					"dataProvider": [
+						{
+							"category": "Male",
+							"column-1": "303652"
+						},
+						{
+							"category": "Female",
+							"column-1": "351440"
+						},
+						{
+							"category": "",
+							"column-1": ""
+						}
+					]
+				}
+			);
+		</script>
+		<script type="text/javascript">
+			AmCharts.makeChart("chartdiv2",
+				{
+					"type": "serial",
+					"categoryField": "category",
+					"maxSelectedTime": -1,
+					"startDuration": 1,
+					"tapToActivate": false,
+					"theme": "dark",
+					"categoryAxis": {
+						"autoRotateAngle": -5.4,
+						"axisAlpha": 1,
+						"centerRotatedLabels": true,
+						"dashLength": 0,
+						"gridAlpha": 0,
+						"gridColor": "#922828",
+						"gridCount": 0,
+						"gridThickness": 14,
+						"minorGridAlpha": 0,
+						"tickLength": 0,
+						"titleRotation": -1
+					},
+					"chartCursor": {
+						"enabled": true
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"bullet": "round",
+							"id": "AmGraph-1",
+							"title": "Male",
+							"valueField": "column-1"
+						},
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"bullet": "square",
+							"id": "AmGraph-2",
+							"title": "Female",
+							"valueField": "column-2"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"axisAlpha": 0,
+							"gridCount": 0,
+							"gridThickness": 0,
+							"labelsEnabled": false,
+							"title": "Axis title",
+							"titleFontSize": 0
+						}
+					],
+					"allLabels": [],
+					"balloon": {
+						"animationDuration": 0,
+						"fadeOutDuration": 0
+					},
+					"legend": {
+						"enabled": true,
+						"align": "center",
+						"useGraphSettings": true
+					},
+					"titles": [],
+					"dataProvider": [
+						{
+							"category": "15-19",
+							"column-1": "140",
+							"column-2": "161"
+						},
+						{
+							"category": "20-24",
+							"column-1": "2130",
+							"column-2": "657"
+						},
+						{
+							"category": "25-34",
+							"column-1": "58502",
+							"column-2": "27446"
+						},
+						{
+							"category": "35-44",
+							"column-1": "117404",
+							"column-2": "52254"
+						},
+						{
+							"category": "45-54",
+							"column-1": "104597",
+							"column-2": "45078"
+						},
+						{
+							"category": "55-64",
+							"column-1": "63348",
+							"column-2": "25267"
+						},
+						{
+							"category": "65-74",
+							"column-1": "18485",
+							"column-2": "8105"
+						},
+						{
+							"category": "75-84",
+							"column-1": "4668",
+							"column-2": "3038"
+						},
+						{
+							"category": "85ov",
+							"column-1": "1415",
+							"column-2": "1465"
+						}
+					]
+				}
+			);
+		</script>
+
+	<script type="text/javascript">
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "serial",
+					"categoryField": "category",
+					"maxSelectedTime": -1,
+					"startDuration": 1,
+					"tapToActivate": false,
+					"theme": "dark",
+					"categoryAxis": {
+						"autoRotateAngle": -5.4,
+						"axisAlpha": 1,
+						"centerRotatedLabels": true,
+						"dashLength": 0,
+						"gridAlpha": 0,
+						"gridColor": "#922828",
+						"gridCount": 0,
+						"gridThickness": 14,
+						"minorGridAlpha": 0,
+						"tickLength": 0,
+						"titleRotation": -1
+					},
+					"chartCursor": {
+						"enabled": true
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"bullet": "round",
+							"id": "AmGraph-1",
+							"title": "Male",
+							"valueField": "column-1"
+						},
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"bullet": "square",
+							"id": "AmGraph-2",
+							"title": "Female",
+							"valueField": "column-2"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"axisAlpha": 0,
+							"gridCount": 0,
+							"gridThickness": 0,
+							"labelsEnabled": false,
+							"title": "Axis title",
+							"titleFontSize": 0
+						}
+					],
+					"allLabels": [],
+					"balloon": {
+						"animationDuration": 0,
+						"fadeOutDuration": 0
+					},
+					"legend": {
+						"enabled": true,
+						"align": "center",
+						"useGraphSettings": true
+					},
+					"titles": [],
+					"dataProvider": [
+						{
+							"category": "15-19",
+							"column-1": "264",
+							"column-2": "157"
+						},
+						{
+							"category": "20-24",
+							"column-1": "1954",
+							"column-2": "506"
+						},
+						{
+							"category": "25-34",
+							"column-1": "42727",
+							"column-2": "18362"
+						},
+						{
+							"category": "35-44",
+							"column-1": "87898",
+							"column-2": "32319"
+						},
+						{
+							"category": "45-54",
+							"column-1": "79276",
+							"column-2": "26398"
+						},
+						{
+							"category": "55-64",
+							"column-1": "45276",
+							"column-2": "13685"
+						},
+						{
+							"category": "65-74",
+							"column-1": "10378",
+							"column-2": "3647"
+						},
+						{
+							"category": "75-84",
+							"column-1": "2677",
+							"column-2": "1791"
+						},
+						{
+							"category": "85ov",
+							"column-1": "933",
+							"column-2": "861"
+						}
+					]
+				}
+			);
+		</script>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+	
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+          <i class="fa fa-times"></i>
+        </a>
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#top">LAPUTA</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#about">Story</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#analysis">Analysis</a>
+        </li>
+		<li>
+          <a class="js-scroll-trigger" href="response.html#top">Response</a>
+        </li>
+		<li>
+          <a class="js-scroll-trigger" href="response.html#portfolio">Gallery</a>
+        </li>
+		<li>
+          <a class="js-scroll-trigger" href="response.html#outcomes">Conclusion</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header" id="top">
+      <div class="text-vertical-center">
+        <h1>LAPUTA</h1>
+        <h3>CODE1230 - Alan Wang & Danielle Bisazza</h3>
+        <br>
+        <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">Find Out More</a>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container text-center">
+        <h2><b>What's the story?</b></h2>
+		<h3>The reasons for the gap between earnings for women and men are numerous. A range of historical factors have played a part in creating the gender pay gap. Today, influencing factors can include:</h3>
+		<ul class="lead">
+		<b>
+			<li>The undervaluation of skills in industries and areas where women predominate women's lack of access to work-based training</li>
+			<li>Different levels of eligibility for discretionary payments such as over-award payments, bonuses and performance pay</li>
+			<li>Inflexible organisational structures that restrict the employment prospects of workers with family responsibilities.</li>
+		</b>
+		</ul>
+        <p class="lead">When first entering the workforce after education, men and women are paid on almost equal terms. It is even shown in some areas that Women under 25 tend to out earn their male counterparts. However gradually a pay gap appears and continues to increase sharply over the passage of time. In an attempt to reveal why this division occurs it was best to look at the period when the gap widens the most significantly. This was found to occur in the late twenties to mid thirties; the time when many are getting married and having children. </p>
+		<p class="lead">The birth of a child marks a significant period of change in the household. The transition between engaging in paid work and having a child can be difficult and there are multiple decisions to be made in regards to returning to work. These choices are often influenced by financial and familial issues in conjunction with the availability of appropriate childcare and flexible work arrangements. </p>
+		<p class="lead">Why does this result in a gender pay gap? The main reason is due to the unequal division of labour at home, with women taking majority of child care duties and men working to support the family. Women are reported to have a 17% loss in lifetime wages due to raising children according to the WGEA.</p>
+
+		<h3>Hours usually worked by mothers immediately before and immediately after birth of child</h3>
+		<img src="img/1.gif" alt="Graph 1">
+		<p>ABS Pregnancy and Employment Transitions, November 2011</p>
+		<p class="lead">A mother's’ participation in continued employment is strongly dependant on the availability of appropriate and affordable child care. While there are a variety of arrangements available and Government benefits to assist, many parents rely on free service providers like family members to be caregivers. </p>
+		<h3>Selected type of child care attended for children under two</h3>
+		<img src="img/2.gif" alt="Graph 2">
+		<p>ABS Childhood Education and Care Survey, June 2011</p>
+		<p class="lead">Data from the 2009 Household Income and Labour Dynamics Australia (HILDA) also revealed that women returning to work after parental leave were subject to an average 7% wage penalty which increases to 12% over the year. A mother's’ earning reduce further with each additional child, with larger families having a negative impact on the participation of women in the workforce and on their lifetime earnings. </p>
+		<p class="lead"><b>What are the consequences of this pay gap?</b></p>
+		<p class="lead">The impact of the pay gap affects society at both a macroeconomic and individual level with it being the driver of income inequality and depression of economic growth as well as resulting in the reduction of economic security of women. It also adds a burden to governments through the increased requirement of welfare which accompanies the diminished earnings. </p>
+		<p class="lead"><b>What is currently being done?</b></p>
+		<p class="lead">One of the main options for women and their families is engaging in flexible work arrangements. According to research women employed in highly flexible roles are far more productive than the rest of the working population. It also provides a great deal of productivity in regards to the need to balance work and family responsibilities.  </p>
+		<h3>Type of flexible arrangements used to assist with care of child</h3>
+		<img src="img/3.gif" alt="Graph 3">
+		<p>ABS Pregnancy and Employment Transitions, November 2011</p>
+		<p class="lead">As shown through the statistics, part time work is the most popular method for balancing work and family responsibilities. This however has a negative effect on women’s wages growth and on their capacity to accumulate human capital. It is also shown to reduce promotional opportunities and career plateaus, reducing their long term earning potentials.</p>
+		
+	  </div>
+
+    </section>
+	
+	  <section id="analysis" class="about" style="background-color: rgb(204, 239, 255)">
+		<div class="container text-center">
+		<h2>Analysis</h2>
+		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #282828;"></div>
+		<p>Number of high income Females vs Males 2011</p>
+		<div id="chartdiv2" style="width: 100%; height: 400px; background-color: #282828;"></div>
+		<p>Number of high income Females vs Males 2016</p>
+		<p class="lead"><br>The pay gap between men and women is shown to sharply increase at the 25-34 bracket and continue to persist throughout most of the following brackets. It is for this reason we decided to look at the the changes occurring between these two brackets.</p>
+	    <div class="col-lg-8 col-md-10 mx-auto">
+		<iframe frameborder="0" class="juxtapose" width="100%" height="550" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=396fec8c-c02f-11e7-b263-0edaf8f81e27"></iframe>
+		<p>Income differences between male and females in 2011</p>
+		<iframe frameborder="0" class="juxtapose" width="100%" height="550" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=64202f50-c02f-11e7-b263-0edaf8f81e27"></iframe>
+		</div>
+		<p>Income differences between male and females in 2016</p>
+			<div id="chartdiv3" style="width: 50%; height: 400px; background-color: #222222; float:left;"></div>
+			<div id="chartdiv4" style="width: 50%; height: 400px; background-color: #222222; margin-left:50%;"></div>
+		<p>Number of graduates of 25 - 34 year old Females vs Males 2011 and 2016</p>
+		<p class="lead">Looking at the levels of year 12 graduates for the age group where the inequality was greatest (ages 25 - 34), it is almost equal with females actually dominating. It is through this that we can deduce that something other than level of education must be playing a role in the widening of the gender pay gap.</p>
+		<div id="chartdiv5" style="width: 100%; height: 400px; background-color: #282828;" ></div>
+		<p>Number of people married vs. age group</p>
+		<p class="lead">What we noted is that around the 25-34 age group there is an extreme increase in the number of individuals that get married. This can be closely linked with the number of children that are being born.  </p>
+		</div>
+		<div class="col-lg-8 col-md-10 mx-auto">
+		<div id='map' style='width: 50%; height: 400px; float: left;'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map = new mapboxgl.Map({
+						container: 'map',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8.5,
+						pitch: 60
+				});
+				map.on('load', function() {
+					map.addLayer({
+						'id': 'data',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': '16_marry_1',
+								'stops': [
+								  [0, 'black'],
+								  [0.03, 'aqua'],
+								  [0.1, 'blue'],
+								  [0.2, 'purple']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'F_in_20-24',
+								'stops': [
+									[0, 0.5],
+									[0.5, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+		<div id='map2' style='width: 50%; height: 400px; float: right;'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map2 = new mapboxgl.Map({
+						container: 'map2',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8.5,
+						pitch: 60
+				});
+				map2.on('load', function() {
+					map2.addLayer({
+						'id': 'data',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': '16_marry_1',
+								'stops': [
+								  [0, 'black'],
+								  [0.03, 'aqua'],
+								  [0.1, 'blue'],
+								  [0.2, 'purple']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'M_in_20-24',
+								'stops': [
+									[0, 0.5],
+									[0.5, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+		<div id='map3' style='width: 50%; height: 400px; float: left;'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map3 = new mapboxgl.Map({
+						container: 'map3',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8.5,
+						pitch: 60
+				});
+				map3.on('load', function() {
+					map3.addLayer({
+						'id': 'data',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': '16_marry_2',
+								'stops': [
+								  [0, 'black'],
+								  [0.2, 'aqua'],
+								  [0.4, 'blue'],
+								  [0.8, 'purple']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'F_in_25-34',
+								'stops': [
+									[0, 0.5],
+									[0.5, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+		<div id='map4' style='width: 50%; height: 400px; float: right;'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map4 = new mapboxgl.Map({
+						container: 'map4',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8.5,
+						pitch: 60
+				});
+				map4.on('load', function() {
+					map4.addLayer({
+						'id': 'data',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': '16_marry_2',
+								'stops': [
+								  [0, 'black'],
+								  [0.2, 'aqua'],
+								  [0.4, 'blue'],
+								  [0.8, 'purple']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'M_in_25-34',
+								'stops': [
+									[0, 0.5],
+									[0.5, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+				
+				
+		</div>
+		<div class="container text-center">
+		<p class="lead">With a closer look at this correlation the 3D extrusions show the differences in income between male and female in relation to the ratio of people married in an area. The colour intensity represents the marriage ratio while the height shows the income ratio. <br>While the CBD and Northern Sydney tend to have the greatest distribution of wealth reflecting the latte line, what we can see as well is that men tend to have more of a distribution and dominate in areas with higher marital rates. </p>
+	  <!-- /.container -->
+    </section>
+    <!-- Call to Action -->
+    <aside class="call-to-action bg-primary text-white">
+      <div class="container text-center">
+        <h3>The response...</h3>
+        <a href="response.html" class="btn btn-lg btn-light">Continue</a>
+      </div>
+    </aside>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.js"></script>
+
+  </body>
+
+</html>
