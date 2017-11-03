@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CODE1230</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+	<script src='./data.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CODE1230</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">The Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="maps.html">The Analysis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="downloads.html">Downloads</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Map and Data Anaysis</h1>
+              <h2 class="subheading">Alan Wang & Danielle Bisazza</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+		
+
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+			<h2 class="section-heading">Ratio of high income earners, Male vs Female.</h2>
+			<p>To show the existing issue, below are two 3D extrusions showing the ratios of high income earners, <b>males represented as on the left</b> and <b>females represented as right</b>. The intensity of the colors represent the education ratio in the area, while the extrusion height shows the income ratio. </p>
+			<p>In 2011:</p>
+			<div id='map' style='width: 50%; height: 400px; float: left'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map = new mapboxgl.Map({
+						container: 'map',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8
+				});
+				map.on('load', function() {
+
+					map.addLayer({
+						'id': 'data',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': 'Ed_2011_M',
+								'stops': [
+								  [0, 'black'],
+								  [0.2, 'cyan'],
+								  [0.98, 'blue']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'In_2011_M',
+								'stops': [
+									[0, 0.41],
+									[1, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+			<div id='map2' style='width: 50%; height: 400px; margin-left: 50%;'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map2 = new mapboxgl.Map({
+						container: 'map2',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8
+				});
+				map2.on('load', function() {
+
+					map2.addLayer({
+						'id': 'data2',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': 'Ed_2011_F',
+								'stops': [
+								  [0, 'black'],
+								  [0.2, 'cyan'],
+								  [1, 'blue']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'In_2011_F',
+								'stops': [
+									[0, 1],
+									[1, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+				 <p>In 2016:</p>
+				<div id='map3' style='width: 50%; height: 400px; float: left'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map3 = new mapboxgl.Map({
+						container: 'map3',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8
+				});
+				map3.on('load', function() {
+
+					map3.addLayer({
+						'id': 'data',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': 'Ed_2016_M',
+								'stops': [
+								  [0, 'black'],
+								  [0.2, 'orange'],
+								  [1, 'red']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'In_2016_M',
+								'stops': [
+									[0, 1],
+									[1, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+			<div id='map4' style='width: 50%; height: 400px; margin-left: 50%;'></div>
+				<script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxhbnc0MTAiLCJhIjoiY2o2dm5haXU2MTN6ZzJxbW5zNzZiYno1dyJ9.SKQLCI0TiB8PGaPsij9PgQ';
+					var map4 = new mapboxgl.Map({
+						container: 'map4',
+						style: 'mapbox://styles/mapbox/dark-v9',
+						center: [150.9, -33.8688],
+						zoom: 8
+				});
+				map4.on('load', function() {
+
+					map4.addLayer({
+						'id': 'data2',
+						'type': 'fill-extrusion',
+						'source': {
+							// Geojson Data source used in vector tiles, documented at
+							// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+							'type': 'geojson',
+							'data': data
+						},
+						'paint': {
+
+							'fill-extrusion-color': {
+								// Get the fill-extrusion-color from the source 'color' property.
+								'property': 'Ed_2016_F',
+								'stops': [
+								  [0, 'black'],
+								  [0.2, 'orange'],
+								  [1, 'red']
+								  ]
+							},
+							'fill-extrusion-height': {
+								// Get fill-extrusion-height from the source 'height' property.
+								'property': 'In_2016_F',
+								'stops': [
+									[0, 1],
+									[1, 40000]
+									]
+							},
+							// Make extrusions slightly opaque for see through indoor walls.
+							'fill-extrusion-opacity': 0.7
+						}
+					});
+				});
+				</script>
+				<p><b>So what does this data conclude? </b><br>We can clearly see that the spread in education is relatively the same in both datasets, however the male income ratio is greatly higher than the female one. The paygap does exist.</p>
+				<p><b>So why does this gap exist? </b><br>Many sources once claimed that the issue was that <b>females were less experienced and educated than men</b>, however this was proven wrong in 2017 by Shadow treasurer Chris Bowen, who revealed that the education gap between genders does not contribute at all (In fact females were more educated). <br>But just in case he was wrong, lets examine the growth over the years.</p>
+				<h2 class="section-heading">Growth rate, Male vs Female</h2>
+				<p>Since it's a little difficult to see the exact changes in a 3d scale, below are male and female growth comparisons for both income and education. <b>(Dark blue represents growth, red indicates negative growth)</b></p>
+				<iframe frameborder="0" class="juxtapose" width="100%" height="490" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=67c6adce-996e-11e7-b263-0edaf8f81e27"></iframe>
+				<iframe frameborder="0" class="juxtapose" width="100%" height="490" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=95f027b6-996e-11e7-b263-0edaf8f81e27"></iframe>
+				<p>From this data, we can see that the female income rate has actually grown significantly in 2016 comparison with 2011.</p>
+				<h2 class="section-heading">Some extra statistics</h2></h2>
+				<img src="downloads/1.png" height="260" width="100%">
+				<img src="downloads/2.png" height="130" width="100%">
+				<img src="downloads/3.png" height="260" width="100%">
+				<h2 class="section-heading">Conclusion</h2>
+				<ol>
+					<li>The high income pay gap exists.</li>
+					<li>The latte line is very prominent within high income regions.</li>
+					<li>The high income pay gap exists.</li>
+					<li>The high income pay gap is closing.</li>
+					<li>The education gap is closing</li>
+					<li>The highest income earners are close to the cbd or in the north shore.</li>
+				</ol>
+		  </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
